@@ -20,6 +20,7 @@
     "no-underscore-dangle": "off",
     "no-alert": "off",
     "react/destructuring-assignment": "off",
+    "no-shadow": "off",
     "react/jsx-one-expression-per-line": "off"
   }
 }
