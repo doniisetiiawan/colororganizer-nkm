@@ -10,7 +10,20 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      colors: [],
+      colors: [
+        {
+          id: '8658c1d0-9eda-4a90-95e1-8001e8eb6036',
+          title: 'Ocean Blue',
+          color: '#0070ff',
+          rating: 3,
+        },
+        {
+          id: 'f9005b4e-975e-433d-a646-79df172e1dbb',
+          title: 'Tomato',
+          color: '#d10012',
+          rating: 2,
+        },
+      ],
     };
   }
 
@@ -51,7 +64,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-
           <div className="app">
             <AddColorFor onNewColor={addColor} />
             <ColorList
