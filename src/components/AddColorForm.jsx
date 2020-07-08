@@ -41,5 +41,9 @@ export class AddColorForm extends Component {
 export default AddColorForm;
 
 AddColorForm.propTypes = {
-  onNewColor: PropTypes.func.isRequired,
+  onNewColor: PropTypes.func,
+};
+
+AddColorForm.defaultProps = {
+  onNewColor: (f) => f,
 };
