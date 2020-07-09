@@ -5,7 +5,7 @@ import './styles.css';
 
 const Star = ({ selected, onClick }) => (
   <div
-    className={(selected) ? 'star selected' : 'star'}
+    className={selected ? 'star selected' : 'star'}
     onClick={onClick}
   />
 );
@@ -13,6 +13,11 @@ const Star = ({ selected, onClick }) => (
 export default Star;
 
 Star.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  selected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
+  selected: PropTypes.bool,
+};
+
+Star.defaultProps = {
+  onClick: (f) => f,
+  selected: false,
 };
