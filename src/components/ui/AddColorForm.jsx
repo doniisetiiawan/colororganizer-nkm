@@ -26,11 +26,17 @@ export class AddColorForm extends Component {
         <form onSubmit={this.submit}>
           <input
             ref={this._title}
+            id="_title"
             type="text"
             placeholder="color title..."
             required
           />
-          <input ref={this._color} type="color" required />
+          <input
+            ref={this._color}
+            id="_color"
+            type="color"
+            required
+          />
           <button type="submit">ADD</button>
         </form>
       </>
