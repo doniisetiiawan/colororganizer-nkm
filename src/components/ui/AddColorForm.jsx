@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component, createRef } from 'react';
+import '../../stylesheets/AddColorForm.scss';
 
 export class AddColorForm extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export class AddColorForm extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.submit}>
+        <form className="add-color" onSubmit={this.submit}>
           <input
             ref={this._title}
             id="_title"

@@ -1,0 +1,15 @@
+import PropTypes from 'prop-types';
+import React from 'react';
+
+const Whoops404 = ({ location }) => (
+  <div className="whoops-404">
+    <h1>
+      Whoops cannot find resource at {location.pathname}
+    </h1>
+  </div>
+);
+export default Whoops404;
+
+Whoops404.propTypes = {
+  location: PropTypes.objectOf(PropTypes.any).isRequired,
+};

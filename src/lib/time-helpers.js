@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export,no-use-before-define */
+/* eslint-disable import/prefer-default-export */
 const second = 1000;
 const minute = 60 * second;
 const hour = 60 * minute;

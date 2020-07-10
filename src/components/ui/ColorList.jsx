@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Color from './Color';
+import '../../stylesheets/ColorList.scss';
 
 const ColorList = ({ colors, onRate, onRemove }) => (
   <div className="color-list">
@@ -27,7 +28,7 @@ ColorList.propTypes = {
 };
 
 ColorList.defaultProps = {
-  colors: [],
+  colors: {},
   onRate: (f) => f,
   onRemove: (f) => f,
 };

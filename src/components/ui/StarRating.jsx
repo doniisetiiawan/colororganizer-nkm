@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Star from './Star';
-import './styles.css';
 
 const StarRating = ({
   starsSelected,

@@ -1,6 +1,13 @@
+// eslint-disable-next-line max-len
+/* eslint-disable jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/no-static-element-interactions */
 import PropTypes from 'prop-types';
 import React, { createRef } from 'react';
+import { withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import StarRating from './StarRating';
+import '../../stylesheets/Color.scss';
+import TimeAgo from './TimeAgo';
 
 class Color extends React.Component {
   constructor(props) {
@@ -39,22 +46,33 @@ class Color extends React.Component {
 
   render() {
     const {
-      title,
       color,
-      rating,
-      onRemove,
+      history,
+      id,
       onRate,
+      onRemove,
+      rating,
+      timestamp,
+      title,
     } = this.props;
+
     return (
       <section className="color" style={this.style}>
-        <h1 ref={this.title}>{title}</h1>
+        <h1
+          ref={this.title}
+          onClick={() => history.push(`/${id}`)}
+        >
+          {title}
+        </h1>
         <button type="button" onClick={onRemove}>
-          X
+          <FontAwesomeIcon icon={faTrash} />
         </button>
         <div
           className="color"
+          onClick={() => history.push(`/${id}`)}
           style={{ backgroundColor: color }}
         />
+        <TimeAgo timestamp={timestamp} />
         <div>
           <StarRating
             starsSelected={rating}
@@ -66,13 +84,16 @@ class Color extends React.Component {
   }
 }
 
-export default Color;
+export default withRouter(Color);
 
 Color.propTypes = {
   color: PropTypes.string.isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+  id: PropTypes.string.isRequired,
   onRate: PropTypes.func,
   onRemove: PropTypes.func,
   rating: PropTypes.number,
+  timestamp: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
